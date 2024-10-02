@@ -1,0 +1,233 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: right;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 25px; /* Contour arrondi des boutons */
+    transition: background-color 0.3s ease; /* Transition douce pour l'effet de survol */
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+nav .menu-icon {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* bouton de reservation */
+@keyframes gradient-animation {
+    0% {
+        background-color: rgb(0, 0, 0);
+    }
+    25% {
+        background-color: rgb(255, 0, 242); /* Premier dégradé */
+    }
+    50% {
+        background-color: rgb(34, 193, 195); /* Deuxième dégradé */
+    }
+    75% {
+        background-color: rgb(100, 253, 45); /* Retour à la couleur de départ */
+    }
+    100% {
+        background-color: rgb(0, 0, 0); /* Retour à la couleur de départ */
+    }
+}
+
+#bouton-reservation {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 25px; /* Contour arrondi des boutons */
+    transition: background-color 0.3s ease; /* Transition douce pour l'effet de survol */
+    background-color:rgb(0, 0, 0)
+}
+
+#bouton-reservation:hover {
+    animation: gradient-animation 2s infinite; /* Appel de l'animation */
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav .menu-icon {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: left;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        border-bottom: 1px solid #444;
+        border-radius: 15px; /* Coins arrondis sur les petits écrans */
+    }
+}
+
+
+/* Header */
+header {
+    position: relative;
+    width: 100%;
+    height: 400px; /* tu peux ajuster cette hauteur */
+    background-image: url(https://wallpapercave.com/wp/wp9608133.jpg);
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* pour que l'image couvre bien tout le header */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px; /* espacement entre le h1 et le p */
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+}
+
+
+/* Main Content */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Section Styles */
+section {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Layout for specific sections */
+section:nth-child(1) {
+    flex: 1;
+    text-align: left;
+}
+
+section:nth-child(2) {
+    flex: 1;
+    text-align: right;
+}
+
+section:nth-child(3) {
+    flex: 1;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        text-align: center;
+    }
+}
